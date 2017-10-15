@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			button{
+				height: 50px;
+				width: 50px;
+				font-size: 25px;
+			}
+			#result{
+				text-align: right;
+				font-size: 30px;
+			}
+		</style>
+		<script type="text/javascript">
+			var str="";
+			function showData(a){
+				str = str + a.value;
+ 				document.getElementById("result").innerHTML = str;
+			};
+			function clearData(){
+				str="";
+				document.getElementById("result").innerHTML = 0;
+			}
+			function calculate(){
+				document.getElementById("result").innerHTML = eval(str);
+			}
+		</script>
+	</head>
+	<body>
+		<table border="1px" cellpadding="8px">
+			<tr>
+				<td colspan="3" id="result">0</td>
+				<td><button type="button" value="c" onclick="clearData()">c</button></td>
+			</tr>
+			<tr>
+				<td><button value="1" onclick="showData(this)">1</button></td>
+				<td><button value="2" onclick="showData(this)">2</button></td>
+				<td><button value="3" onclick="showData(this)">3</button></td>
+				<td><button value="+" onclick="showData(this)">+</button></td>
+			</tr>
+			<tr>
+				<td><button value="4" onclick="showData(this)">4</button></td>
+				<td><button value="5" onclick="showData(this)">5</button></td>
+				<td><button value="6" onclick="showData(this)">6</button></td>
+				<td><button value="-" onclick="showData(this)">-</button></td>
+			</tr>
+			<tr>
+				<td><button value="7" onclick="showData(this)">7</button></td>
+				<td><button value="8" onclick="showData(this)">8</button></td>
+				<td><button value="9" onclick="showData(this)">9</button></td>
+				<td><button value="*" onclick="showData(this)">*</button></td>
+			</tr>
+			<tr>
+				<td><button value="0" onclick="showData(this)">0</button></td>
+				<td><button value="." onclick="showData(this)">.</button></td>
+				<td><button value="=" onclick="calculate()">=</button></td>
+				<td><button value="/" onclick="showData(this)">/</button></td>
+			</tr>
+		</table>
+	</body>
+</html>
