@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  	<title>图片自动滚动</title>
+  	<meta charset="utf-8">
+  	<style type="text/css">
+  		#picScroll{
+  			white-space: nowrap;
+  			overflow: hidden;
+  			width: 600px;
+  		}
+  	</style>
+  	<script type="text/javascript">
+  		window.onload=function(){
+		var speed=10;
+		var tab=document.getElementById("picScroll");
+		var tab1=document.getElementById("picScroll1");
+		var tab2=document.getElementById("picScroll2");
+		function Marquee(){
+			if(tab2.offsetWidth-tab.scrollLeft<=0)
+				tab.scrollLeft-=tab1.offsetWidth;
+			else{
+				tab.scrollLeft++;
+			}
+		}
+var MyMar=setInterval(Marquee,speed);
+tab.onmouseover=function() {clearInterval(MyMar)};
+tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
+}
+
+  	</script>
+	</head>
+	
+<body>
+	<div id="picScroll">
+		<span id="picScroll1">
+			<img src="images/1.jpg" />
+			<img src="images/2.jpg" />
+			<img src="images/3.jpg" />
+			<img src="images/4.jpg" />
+			<img src="images/5.jpg" />
+			<img src="images/6.jpg" />
+			<img src="images/7.jpg" />
+			<img src="images/8.jpg" />
+		</span>
+		<span id="picScroll2">
+			<img src="images/1.jpg" />
+			<img src="images/2.jpg" />
+			<img src="images/3.jpg" />
+			<img src="images/4.jpg" />
+			<img src="images/5.jpg" />
+			<img src="images/6.jpg" />
+			<img src="images/7.jpg" />
+			<img src="images/8.jpg" />
+		</span>
+ 	</div> 
+</body>
+</html>
